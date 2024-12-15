@@ -46,7 +46,7 @@ export default function LoginPage() {
     };
 
     return (
-        <div className="relative">
+        <div>
             <div className="mt-20 xl:mt-0 xl:flex xl:h-screen">
                 <div className="xl:basis-2/3 flex items-center justify-center">
                     < LogoMotto />
@@ -143,7 +143,7 @@ export default function LoginPage() {
                             </div>
                             <div>
                                 <span className="mr-3 text-sm text-gray-500">Don't have an account?</span>
-                                <Link href="/signup" className="text-sm text-red-500 hover:underline">
+                                <Link href="/signup" className="text-sm text-red-600 hover:underline">
                                     Sign Up
                                 </Link>
                             </div>

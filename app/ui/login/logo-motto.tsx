@@ -12,7 +12,7 @@ export default function LogoMotto() {
                         alt="Logo"
                         width={0}
                         height={0}
-                        className="w-[150px] transition-transform duration-300 ease-in-out hover:scale-110"
+                        className="w-40 transition-transform duration-300 ease-in-out hover:scale-110"
                         priority
                     />
                 </Link>
