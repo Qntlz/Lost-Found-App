@@ -96,7 +96,7 @@ export default function LoginPage() {
                             </label>
                             <div className="relative">
                                 <input
-                                    id="passwordMobile"
+                                    id="password"
                                     type={showPassword ? 'text' : 'password'}
                                     name="password"
                                     placeholder="Enter password"
