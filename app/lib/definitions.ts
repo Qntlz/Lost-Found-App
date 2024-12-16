@@ -37,6 +37,13 @@ export type MessageProps = {
     isOwnMessage: boolean;
 };
 
+export type Announcement = {
+    id: string;
+    title: string;
+    message: string;
+    createdAt?: any; // Firestore timestamp
+};
+
 export type MessageInputProps = {
     newMessage: string;
     setNewMessage: (message: string) => void;
