@@ -19,7 +19,7 @@ export default function Homepage() {
         </div>
 
         {/* Announcement Feed */}
-        <div className="hidden xl:flex">
+        <div className="hidden xl:flex flex-grow">
           <Announcements />
         </div>
       </div>
