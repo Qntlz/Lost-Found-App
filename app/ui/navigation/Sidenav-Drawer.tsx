@@ -76,7 +76,7 @@ export default function SideNav({ show, closeNav }: { show: boolean; closeNav: (
                     <HomeIcon className="h-6 w-6 mr-2" />
                     Home
                 </Link>
-                <Link href={'/home'} onClick={closeNav} className="py-2 rounded-lg flex items-center">
+                <Link href={'/announcement'} onClick={closeNav} className="py-2 rounded-lg flex items-center">
                     <MegaphoneIcon className="h-6 w-6 mr-2" />
                     Announcements
                 </Link>
