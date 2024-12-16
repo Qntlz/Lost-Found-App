@@ -7,7 +7,30 @@ export type user = {
 
 export type FormComponentProps = {
     formRef: React.RefObject<HTMLFormElement | null>;
-}
+};
+
+export type MessageType = {
+    user: string;
+    content: string;
+};
+
+export type UserType = {
+    id: number;
+    name: string;
+    item: string; // Field for what the user has found or lost
+};
+
+export type MessageProps = {
+    user: string;
+    content: string;
+    isOwnMessage: boolean;
+};
+
+export type MessageInputProps = {
+    newMessage: string;
+    setNewMessage: (message: string) => void;
+    sendMessage: () => void;
+};
 
 export type userListProps = {
     items: Post[];
