@@ -205,75 +205,76 @@ export default function SignUpForm() {
 
                         {/* Error Message */}
                         {error && <p className="text-red-500 text-sm">{error}</p>}
+                        
+                        {/* Password requirement hints with icons */}
+                        <div>
+                            <div className="text-sm text-gray-500 space-y-2">
+                                <span className="text-red-500 lg:text-xl">Requirements:</span>
+                                <ul className="list-none space-y-2">
+
+                                    <li className="flex items-center lg:text-lg">
+                                        {passwordConditions.hasUpperCase ? (
+                                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                                        ) : (
+                                            <XCircleIcon className="h-5 w-5 text-red-500 mr-2" />
+                                        )}
+                                        At least one uppercase letter
+                                    </li>
+
+                                    <li className="flex items-center lg:text-lg">
+                                        {passwordConditions.hasLowerCase ? (
+                                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                                        ) : (
+                                            <XCircleIcon className="h-5 w-5 text-red-500 mr-2" />
+                                        )}
+                                        At least one lowercase letter
+                                    </li>
+
+                                    <li className="flex items-center lg:text-lg">
+                                        {passwordConditions.hasNumber ? (
+                                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                                        ) : (
+                                            <XCircleIcon className="h-5 w-5 text-red-500 mr-2" />
+                                        )}
+                                        At least one number
+                                    </li>
+
+                                    <li className="flex items-start lg:text-lg">
+                                        {passwordConditions.hasSpecialChar ? (
+                                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                                        ) : (
+                                            <XCircleIcon className="h-5 w-5 text-red-500 mr-2" />
+                                        )}
+                                        <div>
+                                            <span>At least one special character <span className="hidden text-red-500 md:inline-block ml-1">(!, @, #, $, *, &)</span></span>
+                                        </div>
+                                        <span className="block text-red-500 md:hidden">(!, @, #, $, *, &)</span>
+                                    </li>
+                                    <li className="flex items-center lg:text-lg">
+                                        {passwordConditions.hasMinLength ? (
+                                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                                        ) : (
+                                            <XCircleIcon className="h-5 w-5 text-red-500 mr-2" />
+                                        )}
+                                        At least 8 characters
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* Sign Up Button */}
+                        <div>
+                            <button
+                                type="submit"
+                                className={`w-full bg-red-500 text-white py-2 mt-4 rounded-md font-semibold hover:bg-red-700 transition duration-300 lg:text-lg ${!isPasswordValid ? 'opacity-50 cursor-not-allowed' : ''
+                                    }`}
+                                disabled={!isPasswordValid}
+                            >
+                                Sign Up
+                            </button>
+                        </div>
                     </form>
 
-                    {/* Password requirement hints with icons */}
-                    <div>
-                        <div className="text-sm text-gray-500 space-y-2">
-                            <span className="text-red-500 lg:text-xl">Requirements:</span>
-                            <ul className="list-none space-y-2">
-
-                                <li className="flex items-center lg:text-lg">
-                                    {passwordConditions.hasUpperCase ? (
-                                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                                    ) : (
-                                        <XCircleIcon className="h-5 w-5 text-red-500 mr-2" />
-                                    )}
-                                    At least one uppercase letter
-                                </li>
-
-                                <li className="flex items-center lg:text-lg">
-                                    {passwordConditions.hasLowerCase ? (
-                                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                                    ) : (
-                                        <XCircleIcon className="h-5 w-5 text-red-500 mr-2" />
-                                    )}
-                                    At least one lowercase letter
-                                </li>
-
-                                <li className="flex items-center lg:text-lg">
-                                    {passwordConditions.hasNumber ? (
-                                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                                    ) : (
-                                        <XCircleIcon className="h-5 w-5 text-red-500 mr-2" />
-                                    )}
-                                    At least one number
-                                </li>
-
-                                <li className="flex items-start lg:text-lg">
-                                    {passwordConditions.hasSpecialChar ? (
-                                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                                    ) : (
-                                        <XCircleIcon className="h-5 w-5 text-red-500 mr-2" />
-                                    )}
-                                    <div>
-                                        <span>At least one special character <span className="hidden text-red-500 md:inline-block ml-1">(!, @, #, $, *, &)</span></span>
-                                    </div>
-                                    <span className="block text-red-500 md:hidden">(!, @, #, $, *, &)</span>
-                                </li>
-                                <li className="flex items-center lg:text-lg">
-                                    {passwordConditions.hasMinLength ? (
-                                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                                    ) : (
-                                        <XCircleIcon className="h-5 w-5 text-red-500 mr-2" />
-                                    )}
-                                    At least 8 characters
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    {/* Sign Up Button */}
-                    <div>
-                        <button
-                            type="submit"
-                            className={`w-full bg-red-500 text-white py-2 mt-4 rounded-md font-semibold hover:bg-red-700 transition duration-300 lg:text-lg ${!isPasswordValid ? 'opacity-50 cursor-not-allowed' : ''
-                                }`}
-                            disabled={!isPasswordValid}
-                        >
-                            Sign Up
-                        </button>
-                    </div>
 
                     {/* Other Options */}
                     <div className="space-x-3 lg:text-lg">
