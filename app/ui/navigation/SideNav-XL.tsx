@@ -15,17 +15,19 @@ export default function SideNavXL() {
                 <li>
                     <Link href={'/home'}>BSCS - 2</Link>
                 </li>
-                <div className="hidden lg:flex p-2 mt-3 gap-2 text-red-500 border transition ease-in-out delay-150 border-red-500 rounded-xl
+                <Link href={'/post/make'}>
+                    <div className="hidden lg:flex p-2 mt-3 gap-2 text-red-500 border transition ease-in-out delay-150 border-red-500 rounded-xl
                                 hover:bg-red-500 hover:text-white items-center xl:justify-center">
-                    <div>
-                        <Link href={'/post/make'} className="flex font-normal text-sm text-nowrap items-center space-x-2">
+                        <div>
+
                             <PencilSquareIcon className="w-6" />
-                        </Link>
+
+                        </div>
+                        <div className="mt-1">
+                            <span className="hover:underline">New Post</span>
+                        </div>
                     </div>
-                    <div className="mt-1">
-                        <span className="hover:underline">New Post</span>
-                    </div>
-                </div>
+                </Link>
             </ul>
             < NavLinks />
         </div>
