@@ -6,11 +6,15 @@ import { db } from "@/firebaseConfig";
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import Image from "next/image";
 import clsx from "clsx";
+import { useSearch } from "@/app/lib/SearchContext";
 
 export default function Posts({
     items, userList, selectedStatus, selectedCampus,
     selectedBuilding, showFilters, setUserList, setItems
 }: userListProps) {
+
+    const { searchQuery } = useSearch(); // Access searchQuery from context
+    
 
     const [showPreview, setShowPreview] = useState(false);
 
@@ -71,6 +75,37 @@ export default function Posts({
         fetchAllItems();
         fetchUserUIDs();
     }, [selectedStatus, selectedCampus, selectedBuilding]); // Refetch items on filter change
+
+
+    useEffect(() => {
+        const fetchFilteredItems = async () => {
+          const submissionsRef = collection(db, "allSubmissions");
+    
+          try {
+            let q = query(submissionsRef);
+    
+            if (searchQuery) {
+              q = query(
+                submissionsRef,
+                where("itemName", ">=", searchQuery),
+                where("itemName", "<=", searchQuery + "\uf8ff"),
+              );
+            }
+    
+            const snapshot = await getDocs(q);
+            const results = snapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            }) as Post);
+    
+            setItems(results);
+          } catch (error) {
+            console.error("Error fetching posts:", error);
+          }
+        };
+    
+        fetchFilteredItems();
+      }, [searchQuery]); // Re-run when searchQuery changes
 
     return (
         <div className={`transition-all duration-300 ${showFilters ? "pt-5" : ""}`}>
