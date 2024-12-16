@@ -1,8 +1,8 @@
 "use client"
 
-import { Select, Field, Description, Label, Fieldset, Legend, Input, Textarea, Button } from "@headlessui/react";
+import { Select, Field, Description, Label, Fieldset, Legend, Input, Textarea } from "@headlessui/react";
 import { ChevronDownIcon, ArrowUpTrayIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { Timestamp, collection, addDoc, setDoc, doc } from "firebase/firestore";
+import { Timestamp, collection, addDoc } from "firebase/firestore";
 import { FormComponentProps } from "@/app/lib/definitions";
 import React, { useRef, useState } from 'react';
 import { db, auth } from "@/firebaseConfig";
