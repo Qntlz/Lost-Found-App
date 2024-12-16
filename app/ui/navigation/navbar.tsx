@@ -10,14 +10,14 @@ import {
 } from '@heroicons/react/24/outline';
 import ProfileSideNav from "./Profile-Sidenav";
 import { DisplayProfile } from "@/app/lib/actions";
+import { useSearch } from "@/app/lib/SearchContext";
 
 export default function NavBar() {
 
   const [showNav, setShowNav] = useState(false);
   const [showProfileNav, setShowProfileNav] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [showFilter, setShowFilter] = useState(false);
+  const { updateSearch } = useSearch();
 
   return (
     <div>
@@ -79,8 +79,7 @@ export default function NavBar() {
               type="text"
               placeholder="Search by tags (e.g., red, aquaflask)"
               className="mt-1 p-1 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-1 focus:ring-gray-500"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => updateSearch(e.target.value)}
             />
           </div>
 
