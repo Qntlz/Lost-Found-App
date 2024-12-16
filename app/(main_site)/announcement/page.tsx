@@ -39,8 +39,10 @@ export default function ShowAnnouncement() {
   }
 
   return (
-    <div className="flex flex-col gap-10">
-      <Announcements />
+    <div className="flex flex-col gap-10 lg:mx-10">
+      <div className="lg:w-[80%]">
+        <Announcements />
+      </div>
 
       {/* Conditionally render CreateAnnouncement only for admins */}
       {userType === 0 && <CreateAnnouncement />}

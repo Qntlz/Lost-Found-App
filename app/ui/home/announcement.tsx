@@ -36,7 +36,7 @@ export default function Announcements() {
     }, []);
 
     return (
-        <div className="flex flex-col gap-3 w-full mx-5">
+        <div className="flex flex-col gap-3 lg:w-full mx-5">
             {/* Header */}
             <div className="mt-1">
                 <span className="text-2xl text-red-500">Announcements</span>

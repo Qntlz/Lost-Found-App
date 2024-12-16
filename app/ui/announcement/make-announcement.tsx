@@ -49,7 +49,7 @@ export default function CreateAnnouncement() {
   };
 
   return (
-    <div className="flex flex-col mx-6 gap-4 lg:mx-10">
+    <div className="flex flex-col mx-6 gap-4">
       <div className="text-red-500 text-2xl font-medium lg:mt-3">
         <span>Create Announcement</span>
       </div>
