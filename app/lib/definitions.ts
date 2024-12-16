@@ -1,7 +1,13 @@
+import { type } from "os";
+
 export type user = {
     id: string;
     name: string;
 };
+
+export type FormComponentProps = {
+    formRef: React.RefObject<HTMLFormElement | null>;
+}
 
 export type userListProps = {
     items: Post[];
