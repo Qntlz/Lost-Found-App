@@ -7,7 +7,7 @@ export default function SideNavXL() {
     return (
 
         <div className="hidden lg:flex flex-col ml-8 mt-2">
-            <span className="font-semibold text-2xl text-red-500">Dashboard</span>
+            <span className="font-medium text-2xl text-red-500">Dashboard</span>
             <ul className="mt-4 mb-8">
                 <li>
                     <Link href={'/home'}><UsernameDisplay /></Link>
