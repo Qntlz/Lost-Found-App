@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import ProtectedRoute from '@/app/lib/Protected-Route';
-// import Announcements from '@/app/ui/announcement/announcements';
+import Announcements from '@/app/ui/home/announcement';
 import Feed from '@/app/ui/home/feed';
 
 export const metadata: Metadata = {
@@ -14,14 +14,14 @@ export default function Homepage() {
     <ProtectedRoute>
       <div className="flex">
         {/* Post Feed */}
-        <div>
+        <div className="xl:basis-2/3">
           <Feed />
         </div>
 
         {/* Announcement Feed */}
-        {/* <div className="hidden xl:flex">
+        <div className="hidden xl:flex">
           <Announcements />
-        </div> */}
+        </div>
       </div>
     </ProtectedRoute>
   );
