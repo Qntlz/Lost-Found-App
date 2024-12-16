@@ -133,7 +133,7 @@ export default function SignUpForm() {
 
                 {/* Create Account Form */}
                 <div className="flex flex-col mb-10 mx-10 space-y-3 md:mx-24 lg:space-y-5 xl:flex-grow xl:my-16">
-                    <div className="text-xl text-red-500 lg:text-2xl">
+                    <div className="mt-4 text-xl text-red-500 lg:text-2xl">
                         <h2>Create Account</h2>
                     </div>
                     <form onSubmit={handleSubmit} className="flex flex-col space-y-4 w-full">
