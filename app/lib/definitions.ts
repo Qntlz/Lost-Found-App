@@ -1,4 +1,6 @@
 import { type } from "os";
+import { ReactNode } from "react";
+
 
 export type user = {
     id: string;
@@ -7,6 +9,15 @@ export type user = {
 
 export type FormComponentProps = {
     formRef: React.RefObject<HTMLFormElement | null>;
+};
+
+export type SearchProviderProps = {
+    children: ReactNode; // ReactNode represents valid React children
+};
+
+export type SearchContextType = {
+    searchQuery: string;
+    updateSearch: (query: string) => void;
 };
 
 export type MessageType = {
